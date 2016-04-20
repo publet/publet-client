@@ -1,0 +1,128 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+// Color palette styles
+.color-palette {
+  display: flex;
+
+  .palette-label {
+    flex: 0 0 15%;
+    
+    label {
+      text-align: right;
+      padding-right: 1em;
+    }
+  }
+  .palette {
+    flex: 0 0 85%;
+    background: $teal-white;
+    border: 1px solid $teal;
+    padding: .5em;
+
+    &.fullwidth {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+.palette-grid {
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  .palette-item {
+    padding: .5em 0;
+    flex: 0 0 25%;
+    border:none;
+    color:transparent;
+    cursor:pointer;
+
+    &:focus {
+        outline: none;
+    }
+
+    &.active {
+      background: $teal;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      background: smartscale($teal, 25%);
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+
+      label {
+        color: $teal-white;
+      }
+    }
+
+    .label {
+      label {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 12px;
+        overflow: hidden;
+      }
+    }
+    .color {
+      svg {
+        margin: 0 auto;
+        width: 100%;
+      }
+    }
+    > .palette-color {
+      border: 1px solid $teal-darkest;
+    }
+  }
+}
+// tabbed color palette
+.color-select {
+  flex:1;
+
+  .react-tabs {
+    display:flex;
+    margin-bottom: 1em;
+  }
+  .react-tabs [role=tablist] {
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    border-bottom: none;
+    margin-top:1.5em;
+  }
+  .react-tabs [role=tab] {
+    text-align: right;
+    color: $teal-darker;
+    padding: 0;
+    padding: .5em .5em .5em .25em;
+    border-radius: 5px 0px 0px 5px;
+    border-width:0px;
+    border-color: transparent;
+  }
+  .react-tabs [role=tab][aria-selected=true] {
+    background: $teal;
+  }
+  .react-tabs [role=tabpanel] {
+    flex: 3;
+  }
+}

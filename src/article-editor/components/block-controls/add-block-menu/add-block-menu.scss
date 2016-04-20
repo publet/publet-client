@@ -1,0 +1,59 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../../common/baseStyles/baseStyles.scss";
+@import "./node_modules/foundation-apps/scss/components/iconic";
+@import "./node_modules/foundation-apps/scss/components/button";
+@import "./node_modules/foundation-apps/scss/components/button-group";
+
+
+
+.add-block.menu {
+  @media screen and (min-width: 1200px) {
+    max-width: 30vw;
+  }
+  margin: 0 auto;
+  background: $teal-white;
+  border: $teal-light;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+
+  .edit-panel {
+    padding-bottom: .3em;
+  }
+
+  .button-group {
+    margin: 0 auto;
+  }
+  // Most of this is dumb foundation overrides
+  .button-group>li:not(:last-child)>a {border-right: 1px solid $teal-darker;}
+
+  .button-group>li>a {background:$teal-dark;border-color:$teal-darker;}
+
+  .block-type-option {
+    img {
+      height: 40px;
+      width: auto;
+      padding: .25em;
+    }
+    label {
+      color:white;
+    }
+  }
+}

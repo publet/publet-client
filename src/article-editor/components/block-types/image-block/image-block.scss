@@ -1,0 +1,98 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../../common/baseStyles/baseStyles.scss";
+
+// Default Image Styles
+.image-default {
+  display:block;
+  padding: .5em;
+  margin-bottom: .2em;
+  margin: 0 auto;
+}
+.image-card {
+  display:block;
+  padding: .5em;
+  margin: 0 auto;
+  margin-bottom: .2em;
+  background: white;
+  border: 1px solid #DFDFDF
+}
+
+// File picker
+.img-preview {
+  display: flex;
+  max-width: 75%;
+  margin: 0 auto;
+
+  .thumbnail {
+    flex:1;
+    padding: 1em;
+
+    img, video {
+      background-color: #111;
+      max-height:5em;
+      width: auto;
+    }
+  }
+
+  .file-chooser {
+    flex: 2;
+    padding: 1em;
+    padding-top: 2.5em;
+
+    .button {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+
+.image-block {
+  div {
+    width: 100%;
+    display: table;
+    margin: 0 auto;
+  }
+
+  label{
+    display: table-caption;
+    caption-side: bottom;
+  }
+
+  img {
+    width: 100%;
+    display: block;
+    padding: .5em;
+    margin-bottom: .2em;
+    margin: 0 auto;
+  }
+  a {
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.q-img-caption{
+    border:1px solid #95d3d0;
+    margin-top: 10px;
+    &:hover {
+      border:1px solid #6E9994;
+      background: #d3f3ee;
+    }
+  }

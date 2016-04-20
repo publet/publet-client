@@ -1,0 +1,26 @@
+/* ABOUT */
+Humans.txt is an initiative for knowing the people behind a website. It's a TXT file that contains information about the different people who have contributed to building the website.
+
+In this case, its also the example of where common assets shared across multiple publet-client applications go.
+
+/* DEV TEAM */
+Alex Boerstler                         
+Your title: Lead front-end engineer                          
+Site: nerdgrass.com                           
+Twitter: @nerdgrass                          
+Location: Somerwhere new!
+
+Honza Pokorny
+Your title: Lead engineer          
+Site: honza.ca
+Twitter: @_honza                         
+Location: Terezin, Czech republic
+                         
+/* THANKS */                          
+Name: TBD
+                           
+/* SITE */                        
+Last update: YYYY/MM/DD   TBD         
+Standards: TBD
+Components: TBD                  
+Software: TBD   

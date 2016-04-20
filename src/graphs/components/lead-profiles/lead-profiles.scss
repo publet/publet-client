@@ -1,0 +1,91 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "./src/common/baseStyles/styles/_colors.scss";
+
+.lead-profiles {
+  background: $teal-lightest;
+  flex:1;
+  margin-top: .5em;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+
+  header {
+    display: flex;
+    background: $teal-light;
+    padding: 0 1em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    h4 {
+      padding-top: .2em;
+      flex:3.5;
+      color: $teal-darker;
+    }
+    button {
+      background: none;
+      flex: 1;
+      text-align: center;
+      font-size: .9vw;
+      margin-top: .7vw;
+      color: $teal-darkest;
+      text-decoration: none;
+      pointer: cursor;
+    }
+  }
+
+  .profile-list {
+    list-style-type: none;
+    margin-left: 0;
+  }
+  .profile-list-item {
+    width: 100%;
+    padding: .5em 1em;
+    display: flex;
+
+    p {
+      margin-bottom: 0;
+      color: $teal-darkest;
+      cursor: pointer;
+    }
+
+    .name {
+      flex: 3.5
+    }
+    .engaged-time {
+      flex: 1;
+      text-align: center;
+    }
+    .percent-read {
+      flex: 1;
+      text-align: center;
+    }
+
+    &:nth-child(even) {
+      background: $teal-white;
+    }
+
+    a {
+      color: $teal-darker;
+
+      &:hover {
+        color: $maroon;
+      }
+    }
+  }
+}

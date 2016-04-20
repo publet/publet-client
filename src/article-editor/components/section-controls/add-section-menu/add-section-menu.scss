@@ -1,0 +1,81 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../../common/baseStyles/baseStyles.scss";
+
+.add-section-menu {
+  background: $gold-lighter;
+
+  header {
+    display: flex;
+    background: $gold;
+
+    h2 {
+      flex: 1;
+      padding-left: 12.5%;
+      font-family: 'Source Sans Pro', "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: $gold-darkest;
+    }
+    .close-button {
+      flex: 1;
+      padding-right: 12.5%;
+
+      img {
+        float:right;
+        max-height: 2em;
+        margin-top: .9em;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.add-section.edit-form {
+  max-width: 75%;
+  margin: 0 auto;
+
+  label {
+    color: $gold-darkest;
+    text-align: right;
+    font-size: 24px;
+    font-weight: 300;
+    margin-right: 1.5em;
+  }
+
+  .button-group>li>a {
+    padding: 0 1.5em 0 1.5em;
+    background: none;
+
+    img {
+      margin: 0 auto;
+    }
+    label {
+      color: $gold-darkest;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-align: center;
+      margin-right: 0;
+      margin-top: .8em;
+    }
+  }
+  .button-group>li:not(:last-child)>a {
+    border-right: none;
+  }
+}

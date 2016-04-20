@@ -1,0 +1,275 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* ==============================
+
+BASE STYLES
+This includes the absolute barest-bone minimum styles that are required for all applications.
+
+   ============================== */
+
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+// Normalize.css
+@import "./node_modules/foundation-apps/scss/vendor/normalize";
+
+// Color Palette
+@import "styles/colors";
+
+// Font Import
+// @import "styles/_fonts.scss";
+
+// Foundation Settings
+$foundation-version: '1.1.0';
+@import "styles/foundationSettings";
+
+// Foundation Helpers
+@import
+  "./node_modules/foundation-apps/scss/helpers/functions",
+  "./node_modules/foundation-apps/scss/helpers/mixins",
+  "./node_modules/foundation-apps/scss/helpers/breakpoints",
+  "./node_modules/foundation-apps/scss/helpers/images";
+
+// Foundation Global styles
+@import "./node_modules/foundation-apps/scss/global";
+
+//Foundation Components
+@import
+  "./node_modules/foundation-apps/scss/components/grid",
+  "./node_modules/foundation-apps/scss/components/list",
+  "./node_modules/foundation-apps/scss/components/typography",
+  "./node_modules/foundation-apps/scss/components/utilities";
+
+
+// Custom Foundation Styles
+.grid-container {
+  min-width: 75%;
+}
+.grid-frame {
+  @extend %block-core;
+  @include grid-frame;
+  height: auto !important;
+}
+.grid-content {
+  overflow-y: visible;
+}
+.grid-content .grid-block {
+  margin-left: 0;
+  margin-right:0;
+}
+
+// NOTE: this fixes issue #92 - previous foundation flexbox layout had 'flex: 1 1 auto;'
+// which caused layouts to break when increasing # of columns
+// .grid-block {
+//   flex: 1;
+// }
+
+// text alignment
+.txt-align-l {text-align: left !important;}
+.txt-align-r {text-align: right !important;}
+.txt-align-c {text-align: center !important;}
+
+// Default Image Caption Styles
+.caption-default {
+  padding: .5em;
+  margin-bottom: .2em;
+  text-align: center;
+}
+.caption-card {
+  padding: .5em;
+  margin-bottom: .2em;
+  background: white;
+  border: 1px solid #DFDFDF;
+  text-align: center;
+}
+
+// Default Quote Styles
+.quote-default {
+  padding: .5em;
+  margin-bottom: .2em;
+}
+.quote-card {
+  padding: .5em;
+  margin-bottom: .2em;
+  background: white;
+  border: 1px solid #DFDFDF
+}
+
+// Default form styles
+input[type=number], input[type=search], input[type=text], input[type=password], input[type=date], input[type=datetime], input[type=datetime-local], input[type=month], input[type=week], input[type=email], input[type=tel], input[type=time], input[type=url], input[type=color], textarea {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+// Input Placeholder color
+// Webkit
+::-webkit-input-placeholder {color:$teal-light;}
+// Firefox 18- 
+:-moz-placeholder {color:$teal-light}
+// Firefox 19+ 
+::-moz-placeholder {color:$teal-light;}
+// IE
+:-ms-input-placeholder {color:$teal-light;}
+
+select {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+.button-group {
+  padding: 0;
+  li {
+    &:not(:last-child) {
+      button {border-right: 0;}
+    }
+    button {
+      background: none;
+      padding: .85em .5em;
+      &:hover {
+        background: $teal-white;
+      }
+    }
+  }
+}
+.input {
+  display: flex;
+  align-items:center;
+
+  .label {
+    color: $teal-dark;
+    font-size: .9rem;
+    width: 4vw;
+    padding-right: 0;
+    margin-right: .3em;
+    text-align: right;
+  }
+  .field {
+    flex: 1;
+    margin-bottom: 0;
+    color: $teal-darker;
+    // background: $teal-white;
+    // border: 1px solid $teal;
+
+  }
+}
+.inline-input {
+  display:flex;
+
+  .input {
+    flex: 1;
+
+    &:not(:last-child) {
+      margin-right: .5em;
+    }
+  }
+}
+
+// Close & Move buttons
+.move-icon {
+  float: right;
+  img {
+    margin-right: .5em;
+    max-height: 1.1em;
+  }
+}
+.close-icon {
+  float: right;
+  img {
+    cursor: pointer;
+    max-height: 1em;
+  }
+}
+
+// Default Button Styles
+button {
+  border:0;
+}
+.button[disabled] {
+  background:silver;
+  color:whitesmoke;
+}
+
+// Block headers
+.block-header {
+  background: $teal-light;
+  padding: .5em;
+  font-size: 18px;
+  font-weight: 600;
+  color: $teal-darkest;
+  font-family: 'Source Serif Pro', serif;
+
+  .grid-content {
+    padding:0;
+  }
+}
+
+// Component edit form
+.edit-panel {
+  .edit-form {
+    margin: 1em;
+    label {
+      select {margin-top: .5em;}
+    }
+    // Fix foundation's -1rem l/r margins on grid in form
+    &.grid-block {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+    .grid-column {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+    .grid-block {
+      margin-left: 0rem;
+      margin-right: 0rem;
+    }
+  }
+}
+
+.right {
+  text-align: right;
+  p {text-align: right;}
+}
+.left {
+  text-align: left;
+  p {text-align: left;}
+}
+.center {
+  text-align: center;
+  p {text-align: center;}
+}
+
+// This is for fixed nav ONLY. Its currently being applied to all nav.
+// Will need eventual fix --AB, 10/23
+a.anchor {
+  display: block;
+  position: relative;
+  top: -4.5em;
+  visibility: hidden;
+}
+.error-message{
+  text-align: center;
+  color: #4D847F;
+}
+
+.error-block{
+  color: #5C2849;
+  text-align: center;
+  margin-top: 3em;
+}

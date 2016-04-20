@@ -1,0 +1,71 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+.estimated-value-calc {
+  display: flex;
+  margin-top: 1vw;
+}
+
+.publication-value {
+  flex: 3;
+  display: flex;
+
+  .value {
+    flex: 1.5;
+    font-family: $body-font-family;
+    font-weight: 600;
+    color: $maroon;
+    font-size: 300%;
+    line-height:30px;
+    text-align: center;
+  }
+
+  label {
+    flex: 1;
+    text-transform: uppercase;
+    font-family: $body-font-family;
+    font-weight: 700;
+    color: $plum;
+    font-size: 85%;
+    letter-spacing: 4px;
+    margin-top: .4vw;
+    text-align: right;
+  }
+}
+
+.lead-value {
+  flex: 1.5;
+  display: flex;
+  margin-top: .4vw;
+
+  input[type=text] {
+    flex: 1;
+    margin-bottom: .2vw;
+    height: 2vw;
+    text-align: center;
+  }
+
+  label {
+    flex: 1.5;
+    text-align: left;
+    padding-left: .3vw;
+
+  }
+}

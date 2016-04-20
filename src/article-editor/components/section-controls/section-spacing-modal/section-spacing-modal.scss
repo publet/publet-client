@@ -1,0 +1,37 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../../common/baseStyles/baseStyles.scss";
+
+.note {
+  color: #6E9997;
+}
+
+.section-spacing-edit {
+  .input{
+    margin-bottom: .3em;
+  }
+  .input-label {
+    color: #6E9994;
+    font-size: .9rem;
+    width: 8vw;
+    padding-right: 0;
+    margin-right: .3em;
+    text-align: right;
+  }
+}

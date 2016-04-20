@@ -1,0 +1,265 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+.article-nav {
+  display: flex;
+  position: relative;
+  flex: 1 0 100%;
+  flex-wrap: wrap; // must be there to allow the navigation to go next line
+  max-height: 4.5em;
+  min-height: 4.5em;
+  overflow: visible;
+}
+
+.logo {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  flex: 2 0 20%;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration:none;
+
+  @media all and (min-width:30em) {
+    flex: 1 0 8em;
+    justify-content: center;
+    padding-left: 1em;
+  }
+}
+
+.navigation-mobile {
+  position: relative;
+  z-index: 9;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+
+  @media all and (min-width:30em){
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.navigation-mobile a {
+  line-height: 1.8;
+  display:flex;
+  flex:1 0 auto; //at 100% this caused IE11 to suck
+  justify-content:center;
+  align-items:flex-start; //this also affects the pseudo element
+  position:relative;
+  padding:1em;
+  font-size:1em;
+  z-index:10;
+  width:100%;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background-color 0.4s ease-in-out;
+
+  &:before {
+    content:" ";
+    display:flex;
+    flex:0 0 2em;
+    height:1.5em;
+    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/22318/icon_MobileMenu_black_2.svg") no-repeat 0 0;
+    justify-content:flex-start;
+    align-items:flex-start;
+    //discovery:
+    //background-size appears not to work with flexbox
+  }
+}
+
+.navigation-container {
+  display:flex;
+  flex:1 0 100%;
+
+  @media all and (min-width:30em) {
+    flex:1 1 90%;
+    flex-direction:row;
+    justify-content:flex-end;
+  }
+}
+
+.navigation {
+  position:absolute;
+  z-index:8;
+  width:100%;
+  margin: 0;
+
+  @media all and (min-width:30em) {
+    position:relative;
+    display:flex;
+    flex:1 0 auto;
+    flex-direction:row;
+    justify-content:flex-end;
+  }
+}
+
+.navigation-item {
+  display:block;
+  width:100%;
+
+  @media all and (min-width:30em){
+    border-bottom:none;
+    display:flex;
+    flex-wrap:nowrap;
+    flex: 1 0 auto;
+    width:auto;
+  }
+}
+
+.navigation-item a {
+  display:block;
+  width:100%;
+  padding:.5em 1.5em;
+  text-align:center;
+  text-decoration:none;
+  transition:background-color 0.4s ease-in-out;
+}
+
+
+// New nav
+#articleNav {
+  margin:0 auto;
+  width: 100%;
+  padding: 20px 0;
+
+  #articleNavItems {
+    text-align: center;
+    a {
+      color: #fff;
+      text-decoration: none;
+      
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
+    ul {
+      padding:0;
+      margin:0;
+    }
+
+    .items li {
+      list-style: none;
+      display:inline;
+      padding-right: 15px;
+      width:100%;
+      margin: 0 auto;
+    }
+
+    .icon {
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      font-size:24px;
+      text-align:center;
+    }
+
+
+  
+
+
+  .content {
+    padding: 15px 0;
+    width:60%;
+    margin: 0 auto;
+    line-height:22px;
+  }
+}
+// When there's > 4 nav articles
+#articleNavBig {
+  margin:0;
+  width: 100%;
+  padding-top:5px;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  z-index: 900;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      color: #ccc;
+    }
+  }
+  ul {
+    padding:0;
+    margin:0;
+  }
+
+  .items {
+    display:none;
+    li {
+      list-style: none;
+      display:table;
+      padding-right: 15px;
+      width:100%;
+      margin: 0 auto;
+      padding:10px 0;
+    } 
+  }
+  .icon {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size:24px;
+  }
+  .showitems {
+    display:block !important;
+  }
+  .content {
+    padding: 15px 0;
+    width:60%;
+    margin: 0 auto;
+    line-height:22px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #articleNav {
+    .icon {
+       display:block; 
+    }
+     .items {
+      display:none;   
+    }
+    .items li {
+      display:table;
+      padding:10px 0;
+    }
+  }
+      #articleNavItems.showitems {
+      text-align: left;
+      display:block !important;
+      background: #999;
+      li {
+        text-aligin : left !important;
+        padding : 10px 20px !important;
+        a {        
+          color : #FFF;
+          &:hover {
+            color : #ccc !important;
+          }
+        }      
+      }
+    }
+}

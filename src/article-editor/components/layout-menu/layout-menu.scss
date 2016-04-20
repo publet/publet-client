@@ -1,0 +1,45 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+@import "./node_modules/foundation-apps/scss/components/forms";
+@import "./node_modules/foundation-apps/scss/components/iconic";
+@import "./node_modules/foundation-apps/scss/components/button";
+
+.layout-menu {
+  .inline-label {
+    margin-bottom: 0;
+  }
+}
+.layout-menu-label {
+  font-weight: 500;
+  color: $teal-darkest;
+  margin-right: 1em;
+  margin-top: .2em;
+  font-size: 18px;
+}
+.layout-select {
+  background: $teal-white url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1…24"><polygon points="0,0 8,0 4,6" style="fill:#4D847F"></polygon></svg>') right 10px center no-repeat;
+  background-size: 8px 8px;
+  border: 1px solid $teal-dark;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  color: $teal-darker;
+  padding:0 1em 0 1em;
+}

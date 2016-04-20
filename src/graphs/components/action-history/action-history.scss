@@ -1,0 +1,69 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "./src/common/baseStyles/styles/_colors.scss";
+
+.history-header {
+  h2 {
+    font-size: 200%;
+    color: $teal-darker;
+    border-bottom: 2px solid $teal-dark;
+    margin-top: 2vw;
+  }
+}
+.history-key {
+  display: flex;
+  border-bottom: 2px solid $teal-dark;
+  p {
+    flex:1;
+    color: $teal-darker;
+    margin-left: 2vw;
+    margin-bottom: .2vw;
+  }
+}
+
+
+.action-history {
+  margin-bottom: 4vw;
+  margin-right: 4vw;
+}
+.user-actions {
+  margin-left: 0;
+  li {
+    display:flex;
+
+    &:nth-child(odd) {
+      background: $teal-white;
+    }
+    p {
+      color: $teal-darkest;
+      margin-left: 2vw;
+      margin-top: .3vw;
+      margin-bottom: .3vw;
+    }
+    .name {
+      flex:1;
+    }
+    .value {
+      flex:1;
+    }
+    .type {
+      flex:1;
+    }
+  }
+}

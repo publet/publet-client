@@ -1,0 +1,65 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+.editable {
+  background: $teal-lightest;
+}
+.column{
+  flex-basis: inherit;
+}
+@media screen and (max-width: 600px) {
+  .section {
+    min-height: 0 !important;
+  }
+  .grid-block {
+    flex-flow: column nowrap !important;
+  }
+}
+.section.grid-container {
+  min-height: 6em;
+}
+
+// Section Layouts
+.one-col-thin.section-layout {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sidebar-right.section-layout {
+  .column:first-child {
+    flex: 2;
+  }
+}
+.sidebar-left.section-layout {
+  .column:last-child {
+    flex: 2;
+  }
+}
+
+.marginalia-right.section-layout {
+  .column:first-child {
+    flex: 3;
+  }
+}
+.marginalia-left.section-layout {
+  .column:last-child {
+    flex: 3;
+  }
+}

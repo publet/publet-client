@@ -1,0 +1,67 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+@import "./node_modules/foundation-apps/scss/components/forms";
+
+.edit-text-style {}
+.save-and-close.button {
+  float: right;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+.select-text-style {
+  margin: 0 0 0 1em;
+
+  .style-select {
+    max-width: 50%;
+    margin-bottom: 1em;
+    display: flex;
+
+    select {
+      text-align: right;
+      padding-right: 1em;
+      padding-top: .3em;
+      margin-left: -1.5em;
+      color: $teal-darker;
+      text-transform: capitalize;
+
+    }
+  }
+}
+.sample-text {
+  max-height: 20vh;
+  overflow: scroll;
+  margin-bottom: .5em;
+}
+.text-style-edit {
+  display: flex;
+  padding: 0 .5em .5em .5em;
+
+  .typography {
+    flex: 1;
+    padding-right: 1.5em;
+
+    .input {
+      margin-bottom: .5em;
+    }
+  }
+  .color {
+    flex: 1;
+  }
+}

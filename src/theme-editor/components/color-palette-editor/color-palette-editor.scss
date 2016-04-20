@@ -1,0 +1,105 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+.palette-container {
+  display: flex;
+  flex-flow: row wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+
+  .palette-item {
+    width: 25%;
+
+    .color {
+      max-width: 10em;
+      svg {
+        margin: 0 auto;
+        display: block;
+      }
+      .bordered {
+        border: 1px solid silver;
+      }
+      .item-info {
+        display: flex;
+        max-width: 100px;
+        margin:0 auto;
+        p {
+          color: $teal-darkest;
+          flex:3;
+          text-align: center;
+          text-transform: capitalize;
+        }
+        .delete-color {
+          flex:1;
+
+          img {
+            max-width: 1em;
+            margin-top: .3em;
+            margin-left: .3em;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 500px) {
+  .palette-container {
+    .palette-item {
+      width: 30%;
+    }
+  }
+}
+
+// DeleteColorBtn styles
+.delete-color {
+  .button {
+    font-size: 10px;
+    font-weight: 600;
+  }
+}
+
+// AddColorForm styles
+.add-color {
+  background: $teal-white;
+  border-radius: 4px;
+
+  .color {display: flex;max-width:none;}
+  form {
+    flex:1;
+    margin: 10px;
+
+    .input {
+      min-width: 7em;
+      display: block;
+      margin-bottom: .5em;
+
+      input {max-width: 7em;}
+    }
+  }
+  button {
+    margin-left: 10px;
+    margin-right:10px;
+    width:90%;
+  }
+}

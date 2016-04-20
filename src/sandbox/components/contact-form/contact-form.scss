@@ -1,0 +1,103 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../common/baseStyles/baseStyles.scss";
+
+.email-submit-wrapper {
+  max-width: 400px;
+  float:right;
+  position: relative;
+  display: table;
+  border-collapse: separate;
+
+  .form-control {
+    width: 100%;
+    margin-bottom: 0;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    background: $teal-lightest;
+    color: #555;
+    vertical-align: middle;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      padding: 0 .5em !important;
+      height: 35px;
+    }
+  }
+
+  .input-group-btn, .input-group .form-control {
+    display: table-cell;
+  }
+
+  .input-group-btn {
+    position: relative;
+    white-space: nowrap;
+    width: 1%;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+
+  .input-group-btn:last-child>.btn {
+    margin-left: -1px;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  .input-group-btn>.btn {
+    position: relative;
+  }
+
+  .email-submit-button {
+    background-color: $maroon;
+  }
+
+  .btn {
+    color: white;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-appearance: button;
+    text-transform: none;
+
+    &:hover {
+      background-color: $plum;
+    }
+  }
+}

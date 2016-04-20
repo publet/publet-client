@@ -1,0 +1,178 @@
+/*
+ * Publet --- online publishing platform
+ * Copyright (C) 2016, Publet Inc.
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+@import "../../../../common/baseStyles/baseStyles.scss";
+@import "./node_modules/foundation-apps/scss/components/iconic";
+@import "./node_modules/foundation-apps/scss/components/menu-bar";
+@import "./node_modules/foundation-apps/scss/components/forms";
+@import "./node_modules/foundation-apps/scss/components/switch";
+@import "./node_modules/foundation-apps/scss/components/button";
+
+.section-toolbar {
+  background: $teal;
+
+  .menu-bar {
+    background:$teal;
+  }
+  .close-icon, .move-icon {
+    cursor: pointer;
+    padding: 1rem .5rem;
+    img {
+      max-height: 1.7em;
+    }
+  }
+  .switch {
+    @extend %switch;
+    @include switch-style (
+      $background: $switch-background,
+      $background-active: $maroon
+    );
+    margin-top: .9em;
+  }
+}
+
+/*
+  SWITCH CRAP (because foundation is occasionally frustrating)
+  ------
+*/
+
+/// @Foundation.settings
+// Switch
+$switch-width: rem-calc(50) !default;
+$switch-height: rem-calc(32) !default;
+$switch-background: #ccc !default;
+$switch-background-active: $primary-color !default;
+$switch-border: 0 !default;
+$switch-radius: 9999px !default;
+$switch-animation-speed: 0.15s !default;
+
+$switch-paddle-color: white !default;
+$switch-paddle-offset: 4px !default;
+///
+
+%switch {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+
+  > input {
+    position: absolute;
+    left: -9999px;
+    outline: none;
+  }
+
+  > label {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    margin: 0;
+
+    // Paddle
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+/*
+  Defines the dimmensions of the switch.
+
+  $width - width of the switch.
+  $height - height of the switch.
+*/
+@mixin switch-layout(
+  $width: $switch-width,
+  $height: $switch-height
+) {
+  width: $width;
+  height: $height;
+
+  > label {
+    &::after {
+      width: $height;
+      height: $height;
+    }
+  }
+  input:checked + label {
+    &::after {
+      left: $width - $height;
+    }
+  }
+}
+
+@mixin switch-style(
+  $background: $switch-background,
+  $background-active: $switch-background-active,
+  $border: $switch-border,
+  $radius: $switch-radius,
+  $paddle-color: $switch-paddle-color,
+  $paddle-offset: $switch-paddle-offset,
+  $animation-speed: $switch-animation-speed
+) {
+  @if hasvalue($border) {
+    border: $border;
+  }
+  border-radius: $radius;
+
+  > label {
+    background: $background;
+
+    &::after {
+      background: $paddle-color;
+      border-radius: $radius;
+      transition: left $animation-speed ease-out;
+
+      @if hasvalue($paddle-offset) {
+        border: $paddle-offset solid $background
+      }
+    }
+  }
+
+  input:checked + label {
+    background: $background-active;
+    margin: 0;
+
+    &::after {
+      @if hasvalue($paddle-offset) {
+        border-color: $background-active;
+      }
+    }
+  }
+}
+
+@mixin switch() {
+  @extend %switch;
+  @include switch-layout;
+  @include switch-style;
+}
+
+@include exports(switch) {
+  .switch {
+    @include switch;
+
+    &.small { @include switch-layout(rem-calc(40), rem-calc(26)); }
+    &.large { @include switch-layout(rem-calc(60), rem-calc(38)); }
+  }
+}
