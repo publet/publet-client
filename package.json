@@ -18,7 +18,7 @@
     "history": "1.17.0",
     "immutable": "^3.7.3",
     "immutablediff": "git://github.com/intelie/immutable-js-diff.git#c1571be841c5da119b255f50db3cd8cf75721177",
-    "jquery": "^2.1.4",
+    "jquery": "^3.0.0",
     "object-assign": "^2.0.0",
     "offline-js": "^0.7.13",
     "postcss-loader": "^0.8.0",
